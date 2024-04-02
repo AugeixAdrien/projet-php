@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-light">
-    <!--<?php include "./Vue/components/header.component.html"; ?>-->
+    <?php include "./Vue/components/header.component.html"; ?>
     <div class="container mt-5" style="min-height: 100vh">
         <h1>Liste des Conférence</h1><br />
         <table class="table">
@@ -71,7 +71,7 @@
         <!--<a href="index.php?action=FORM" class="btn btn-success">Ajouter un pilote</a><br><br>
         <a href="index.php?action=DET" class="btn btn-info">Voir le nombre</a>-->
     </div>
-    <!--<?php include "./Vue/components/footer.component.html"; ?>-->
+    <?php include "./Vue/components/footer.component.html"; ?>
 </body>
 
 </html>

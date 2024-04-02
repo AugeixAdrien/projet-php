@@ -28,8 +28,11 @@ else
             }
             else
                 if ($_GET["action"] == "REJ")
-                    RejoindreAct();
+                    rejoindreAct();
                 else
                     if ($_GET["action"] == "CO")
-                        Conferences();
+                        conferences();
+                    else
+                        if ($_GET["action"] == "JU")
+                            juridique();
                     

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<?php include "./components/header.component.html"; ?>
+<?php include "./Vue/components/header.component.html"; ?>
 
 <!-- Contenu de la page -->
 <div class="container" id="mentions-legales">
@@ -87,7 +87,7 @@
 </div>
 
 <!-- Pied de page Bootstrap -->
-<?php include "./components/footer.component.html"; ?>
+<?php include "./Vue/components/footer.component.html"; ?>
 
 <!-- Ajouter le lien vers Bootstrap JS et jQuery -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

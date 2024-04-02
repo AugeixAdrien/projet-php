@@ -51,7 +51,7 @@ function details($id_medicament)
     }
 }
 
-function Conferences()
+function conferences()
 {
     $conferences_json = file_get_contents('http://localhost/phpgroupe/api/conferences.php');
     $conferences = json_decode($conferences_json, true);
@@ -62,7 +62,7 @@ function Conferences()
     require_once "vue/conference.php";
 } 
 
-function RejoindreAct(){
+function rejoindreAct(){
     $data = array('id_user' => $_POST["user-select"], 'id_act' => $_POST["id_act"]);
     $options = array('http' => array('header' => "Content-Type: application/x-www-form-urlencoded\r\n", 'method' => 'POST', 'content'=> http_build_query($data)));
     $appel = 'http://localhost/phpgroupe/api/conferences.php'; // Define the URL directly
@@ -75,6 +75,11 @@ function RejoindreAct(){
 
     var_dump($result);
 
+}
+
+function juridique()
+{
+    require_once "vue/juridique.php";
 }
 
 ?>
