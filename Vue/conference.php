@@ -12,6 +12,11 @@
     <?php include "./Vue/components/header.component.html"; ?>
     <div class="container mt-5" style="min-height: 100vh">
         <h1>Liste des Conférence</h1><br />
+        <?php session_start(); ?>
+        <?php if(isset($_SESSION['messageConf'])): ?>
+                    <?php echo $_SESSION['divMessage']?><?php echo $_SESSION['messageConf']; ?></div>
+                    <?php unset($_SESSION['messageConf']); ?>
+        <?php endif; ?>
         <table class="table">
             <tbody>
                 <table class="table table-bordered table-striped">
@@ -57,8 +62,7 @@
 
                                         <input type="hidden" name="id_user" value="<?php echo $user["id"]; ?>">
                                         <input type="hidden" name ="id_act" value="<?php echo $act["id"]; ?>">
-                                        <button type="submit" name="rejoindre" value="Details"
-                                            class="btn btn-primary">Rejoindre</button>
+                                        <button type="submit" name="rejoindre" value="Details" class="btn btn-primary">Rejoindre</button>
                                     </form>
                                 </td>
                             </tr>

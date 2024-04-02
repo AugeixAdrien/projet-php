@@ -65,15 +65,29 @@ function conferences()
 function rejoindreAct(){
     $data = array('id_user' => $_POST["user-select"], 'id_act' => $_POST["id_act"]);
     $options = array('http' => array('header' => "Content-Type: application/x-www-form-urlencoded\r\n", 'method' => 'POST', 'content'=> http_build_query($data)));
-    $appel = 'http://localhost/phpgroupe/api/conferences.php'; // Define the URL directly
+    $appel = 'http://localhost/phpgroupe/api/conferences.php';
 
     $context = stream_context_create($options);
     $result = file_get_contents($appel, false, $context);
-    if($result === FALSE){
-        // Handle error if needed
-    }
 
-    var_dump($result);
+    // result contient string(49) "{"status":1,"status_message":"Insertion reussis"}"
+
+    
+
+    session_start();
+    
+    // si l'insertion a réussi le message est "Vous avez rejoint la conférence"
+
+    if (json_decode($result, true)['status'] == 1) {
+        $message = "Vous avez rejoint la conférence";
+        $couleurMessage = "alert-success";
+    } else {
+        $message = "Erreur lors de l'inscription";
+        $couleurMessage = "alert-danger";
+    }
+    $_SESSION['divMessage'] = '<div class="alert ' . $couleurMessage . '">';
+    $_SESSION['messageConf'] = $message;
+    header("Location: index.php?action=CO");
 
 }
 
